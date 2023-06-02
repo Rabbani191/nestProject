@@ -39,7 +39,7 @@ export class CatsService {
   }
 
   findCat(id: string): ApiResponse<Cat> {
-    const singleCat: Cat = this.cats[Number(id)];
+    const singleCat: Cat = this.cats[id];
     if (!singleCat) throw new NotFoundException('Invalid cat index');
     return { msg: 'Cat returned successfully', data: singleCat };
   }
